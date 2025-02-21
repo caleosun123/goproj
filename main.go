@@ -6,7 +6,18 @@ import (
 )
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
-  fmt.Fprintf(w, "Hello, world!")
+  if r.URL.Path != "/" {
+    errorHandler(w, r, http.StatusNotFound)
+    return
+  }
+  fmt.Fprint('Hello, world!')
+}
+
+func errorHandler(w http.ResponseWriter, r *http.Request, status int) {
+  w.WriteHeader(status)
+  if status == http.StatusNotFound {
+    fmt.Fprint(w, "404 Error: Not found")
+  }
 }
 
 func main() {
