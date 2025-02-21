@@ -6,10 +6,11 @@ import (
 )
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
-  if r.URL.Path != "/" {
+ /* if r.URL.Path != "/" {
     errorHandler(w, r, http.StatusNotFound)
     return
   }
+*/
   http.ServeFile(w, r, "static/index.html")
 }
 
