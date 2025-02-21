@@ -10,7 +10,7 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
     errorHandler(w, r, http.StatusNotFound)
     return
   }
-  fmt.Fprint('Hello, world!')
+  fmt.Fprint("Hello, world!")
 }
 
 func errorHandler(w http.ResponseWriter, r *http.Request, status int) {
