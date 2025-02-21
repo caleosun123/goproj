@@ -5,12 +5,12 @@ import (
   "net/http"
 )
 
-func indexHandler(w http.ReponseWriter, r *http.Request) {
+func indexHandler(w http.ResponseWriter, r *http.Request) {
   fmt.Fprintf(w, "Hello, world!")
 }
 
 func main() {
-  http.HandleFunc("/", helloHandler)
+  http.HandleFunc("/", indexHandler)
   fmt.Println("Starting server at port 8080...")
   if err := http.ListenAndServe(":8080", nil); err != nil {
     fmt.Println("Error starting server:", err)
