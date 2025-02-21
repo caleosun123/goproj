@@ -13,7 +13,7 @@ FROM debian:latest
 
 WORKDIR /root/
 
-COPY --from-builder /app/main .
+COPY --from=builder /app/main .
 
 EXPOSE 8080
 
