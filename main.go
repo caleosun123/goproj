@@ -13,13 +13,14 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 */
   http.ServeFile(w, r, "static/index.html")
 }
-
+/*
 func errorHandler(w http.ResponseWriter, r *http.Request, status int) {
   w.WriteHeader(status)
   if status == http.StatusNotFound {
     fmt.Fprint(w, "404 Error: Not found")
   }
 }
+*/
 
 func main() {
   http.HandleFunc("/", indexHandler)
